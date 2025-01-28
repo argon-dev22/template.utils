@@ -1,0 +1,7 @@
+{
+    "recommendations": [
+        "devcontainers.dev-containerconfig",
+        "devcontainers.remote-container",
+        "ms-azuretools.vscode-docker"
+    ]
+}
