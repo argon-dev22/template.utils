@@ -1,0 +1,5 @@
+services:
+  container:
+    build: ./container
+    ports:
+      - 8080:8080
