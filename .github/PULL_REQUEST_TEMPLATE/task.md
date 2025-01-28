@@ -4,12 +4,6 @@
 
 <!-- Describe the purpose of this PR and what it accomplishes. -->
 
-### 🔗 Related Task / Issue
-
-<!-- Link the related issue or task -->
-
-Closes #ISSUE_ID
-
 ### 🛠 Changes
 
 - [ ] Implemented Feature
