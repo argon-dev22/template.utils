@@ -1,6 +1,10 @@
 {
     "editor.formatOnSave": true,
+    "editor.insertSpaces": true,
     "editor.tabSize": 2,
-    "editor.wordWrap": "on",
-    "editor.wordWrapColumn": 120
+    "files.eol": "\n",
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
+    "editor.detectIndentation": false,
+    "editor.wordWrap": "off",
 }

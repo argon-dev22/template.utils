@@ -1,5 +1,6 @@
 services:
   container:
     build: ./container
+    image: image_name
     ports:
       - 8080:8080
