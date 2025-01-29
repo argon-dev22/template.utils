@@ -1,14 +1,10 @@
-name: "Feature"
+name: "🤖 Feature"
 description: "Propose a new feature or improvement"
 title: "[Feature] "
 labels: ["feature", "enhancement"]
 assignees:
   - "your-github-username"
 body:
-  - type: markdown
-    attributes:
-      value: "## 🎯 Overview\nDescribe the proposed feature or improvement in detail."
-
   - type: input
     id: feature-summary
     attributes:
@@ -22,7 +18,6 @@ body:
       label: "📌 Detailed Description"
       description: "Provide a detailed explanation of the feature's functionality and expected behavior."
       placeholder: "This feature will add a toggle in user settings to switch between light and dark mode. The preference will be stored in local storage."
-      value: "This feature will add a toggle in user settings to switch between light and dark mode. The preference will be stored in local storage."
 
   - type: textarea
     id: related-problems
