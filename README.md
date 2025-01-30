@@ -1,11 +1,11 @@
 # <Project Name>
 
-## 📚 Documentation
+## Quick Start
 
-## 📚 Codebase
+### 1. Clone the repository
 
-## 📚 Tests
+```
+git clone <repo-url> <project-name>
+cd <project-name>
+```
 
-## 📚 CI/CD
-
-## 📚 Deployment

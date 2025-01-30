@@ -1,6 +1,6 @@
 {
-  "name": "container", // devcontainer name
-  "service": "container", // service name in docker-compose.yml
+  "name": "sample", // devcontainer name
+  "service": "sample-service", // service name in docker-compose.yml
   "workspaceFolder": "/app", // WORKDIR in Dockerfile
   "dockerComposeFile": "../../compose.yml", // docker-compose.yml file path
   "customizations": {
