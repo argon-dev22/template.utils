@@ -2,5 +2,6 @@ services:
   sample-service:
     build: ./sample-container
     image: output_image_name
-    ports:
-      - 8080:8080
+    volumes:
+      - ./sample-container:/app
+    command: ["sleep", "infinity"]
