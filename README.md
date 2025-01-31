@@ -9,3 +9,9 @@ git clone <repo-url> <project-name>
 cd <project-name>
 ```
 
+## Environmental Variable List
+
+|Variable|Explenation|
+|---|---|
+|`EXAMPLE_VARIABLE`|Environmental Varialbe Example|
+
