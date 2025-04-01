@@ -1,7 +1,7 @@
 services:
-  sample-service:
-    build: ./sample-container
-    image: output_image_name
+  sample_service:
+    build: ./sample_container
+    image: output-image-name
     volumes:
-      - ./sample-container:/app
+      - ./sample_container/src:/app
     command: ["sleep", "infinity"]
