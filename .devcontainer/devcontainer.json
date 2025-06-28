@@ -1,0 +1,16 @@
+{
+  "name": "dev", // any devcontainer name
+  "service": "workspace", // service name in docker-compose.yml
+  "workspaceFolder": "/workspace", // WORKDIR in Dockerfile
+  "dockerComposeFile": "../docker-compose.dev.yml", // docker-compose.yml file path
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        // Add extension's identifiers here
+        "ms-azuretools.vscode-docker",
+        "streetsidesoftware.code-spell-checker",
+        "ms-python.python"
+      ]
+    }
+  }
+}
