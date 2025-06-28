@@ -2,4 +2,5 @@ services:
   workspace:
     image: argon/template.utils/dev
     build: .
-
+    volumes:
+      - ~/.ssh:/root/.ssh
