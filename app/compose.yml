@@ -1,7 +1,0 @@
-services:
-  sample_service:
-    build: ./sample_container
-    image: output-image-name
-    volumes:
-      - ./sample_container/src:/app
-    command: ["sleep", "infinity"]

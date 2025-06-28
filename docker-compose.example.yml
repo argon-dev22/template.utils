@@ -1,0 +1,6 @@
+services:
+  sample:
+    build: ./app/sample
+    image: argon/template.utils/sample
+    volumes:
+      - ./app/sample/src:/app
