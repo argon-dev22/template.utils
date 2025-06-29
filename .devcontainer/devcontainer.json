@@ -1,8 +1,6 @@
 {
   "name": "dev", // any devcontainer name
-  "service": "workspace", // service name in docker-compose.yml
-  "workspaceFolder": "/workspace", // WORKDIR in Dockerfile
-  "dockerComposeFile": "../docker-compose.dev.yml", // docker-compose.yml file path
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
   "customizations": {
     "vscode": {
       "extensions": [
@@ -18,8 +16,11 @@
     }
   },
   "features": {
-    "ghcr.io/devcontainers/features/docker-in-docker:1": {},
+    // Add features here
+    "ghcr.io/devcontainers/features/common-utils:2.5.3": {},
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {},
     "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/anthropics/devcontainer-features/claude-code:1": {},
     "ghcr.io/devcontainers/features/go:1": {
       "version": "1.23"
     },

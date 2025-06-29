@@ -1,4 +1,0 @@
-services:
-  workspace:
-    image: argon/template.utils/dev
-    build: .
