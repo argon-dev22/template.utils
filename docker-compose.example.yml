@@ -1,6 +1,13 @@
 services:
-  sample:
-    image: argon/template.utils/sample
-    build: ./app/sample
+
+  sample_go:
+    image: template.utils/sample-go
+    build: ./app/sample_go
     volumes:
-      - ./app/sample/src:/app
+      - ./app/sample_go/src:/app
+
+  sample_py:
+    image: template.utils/sample-py
+    build: ./app/sample_py
+    volumes:
+      - ./app/sample_py/src:/app
