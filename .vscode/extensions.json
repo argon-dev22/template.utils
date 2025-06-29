@@ -1,7 +1,5 @@
 {
-    "recommendations": [
-        "ms-vscode-remote.remote-containers", // Remote Containers
-        "ms-azuretools.vscode-docker", // Docker
-        "editorconfig.editorconfig" // EditorConfig
-    ]
+  "recommendations": [
+    "ms-vscode-remote.remote-containers", // Remote Containers
+  ]
 }
