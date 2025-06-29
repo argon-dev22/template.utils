@@ -10,8 +10,19 @@
         "ms-azuretools.vscode-docker",
         "editorconfig.editorconfig",
         "streetsidesoftware.code-spell-checker",
+        "golang.go",
         "ms-python.python"
       ]
+    }
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:1": {},
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/go:1": {
+      "version": "1.23"
+    },
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "3.9"
     }
   }
 }
