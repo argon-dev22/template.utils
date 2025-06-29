@@ -11,3 +11,15 @@ services:
     build: ./app/sample_py
     volumes:
       - ./app/sample_py/src:/app
+
+  sample_db:
+    image: postgres:16
+    volumes:
+      - sample_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
+
+volumes:
+  sample_data:

@@ -9,6 +9,8 @@
         // Add extension's identifiers here
         "ms-azuretools.vscode-docker",
         "editorconfig.editorconfig",
+        "cweijan.vscode-database-client2",
+        "cweijan.dbclient-jdbc",
         "streetsidesoftware.code-spell-checker",
         "golang.go",
         "ms-python.python"
