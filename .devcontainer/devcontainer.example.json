@@ -5,6 +5,7 @@
     "vscode": {
       "extensions": [
         "ms-azuretools.vscode-docker",
+        "ms-azuretools.vscode-containers",
         "editorconfig.editorconfig",
         "cweijan.vscode-database-client2",
         "cweijan.dbclient-jdbc",
