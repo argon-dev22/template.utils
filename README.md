@@ -44,6 +44,7 @@ zsh ./bin/setup-container.sh
 ### 3. 開発環境でアプリケーションを起動する
 
 ```bash
+cd ./app/
 docker compose up
 ```
 
