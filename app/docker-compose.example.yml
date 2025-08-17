@@ -2,15 +2,17 @@ services:
 
   sample_go:
     image: template.utils/sample-go
-    build: ./app/sample_go
+    build: ./sample_go
+    environment:
+      - EXAMPLE_VARIABLE="Environmental Variable Example"
     volumes:
-      - ./app/sample_go/src:/app
+      - ./sample_go/src:/app
 
   sample_py:
     image: template.utils/sample-py
-    build: ./app/sample_py
+    build: ./sample_py
     volumes:
-      - ./app/sample_py/src:/app
+      - ./sample_py/src:/app
 
   sample_db:
     image: postgres:16
