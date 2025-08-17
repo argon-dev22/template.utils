@@ -6,13 +6,15 @@
 
 |名前|説明|必須|
 |---|---|---|
-|`EXAMPLE_VARIABLE`|Environmental Varialbe Example|〇|
+|`EXAMPLE_VARIABLE`|Environmental Variable Example|〇|
 
 ## クイックスタート
 
-### 前提
+## 前提条件
 
-- [Dev Container](https://containers.dev/)の CLI まはた VSCode 拡張機能のいづれかをインストールしていること。
+- [Dev Containers](https://containers.dev/)の拡張昨日をインストールしていること
+
+## セットアップ例（macOS/Linux環境）
 
 ### 1. リポジトリをクローンする
 
@@ -21,22 +23,31 @@ git clone <repo-url> <project-name>
 cd <project-name>
 ```
 
-### 2. 開発用コンテナ（Dev Container）の起動
-
-1. `devcontainer.example.json`をコピーして`devcontainer.json`を作成する。
-
-2. 下記コマンドを実行して起動。
+### 2. プロジェクトを初期化する
 
 ```bash
-devcontainer up --workspace-folder . # または VSCodeのGUIから起動
+bash ./bin/setup-container.sh
+# または
+zsh ./bin/setup-container.sh
 ```
 
-### 3. アプリケーション用コンテナの起動
+### 3. Dev Containersを起動する
 
-1. `docker-compose.example.yml`をコピーして`docker-compose.yml`を作成する。
+1. VSCodeで「^P」を押してコマンドパレットを開く
 
-2. 下記コマンドを実行して起動。
+2. 検索窓に「> `Dev Containers: Open Folder in Container`」と入力する
+
+3. 表示された候補を選択して実行（Dev Containers起動）
+
+以降の手順はDev Containers内で行う。
+
+### 3. 開発環境でアプリケーションを起動する
 
 ```bash
 docker compose up
 ```
+
+### 4. アプリケーションにアクセスする
+
+ブラウザで以下のURLにアクセス:
+- **アプリケーション**: http://localhost:3000
