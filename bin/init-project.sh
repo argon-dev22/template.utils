@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-echo "Githubのユーザー名を入力してください:"
+echo "Githubのユーザー名(組織名)を入力してください:"
 read gh_user_name
 
 echo ""
@@ -12,7 +12,7 @@ echo ""
 
 echo "--------------------------------"
 echo "設定内容:"
-echo "Githubのユーザー名: $gh_user_name"
+echo "Githubのユーザー名(組織名): $gh_user_name"
 echo "Githubのメールアドレス: $gh_email"
 echo "--------------------------------"
 echo ""
