@@ -1,55 +1,55 @@
 # Template Utils - Hello Template App
 
-React + Python (FastAPI) + PostgreSQL を使用したシンプルなサンプルアプリケーションです。
+A simple sample application using React + Python (FastAPI) + PostgreSQL.
 
-## 🎯 アプリケーション概要
+## 🎯 Application Overview
 
-このサンプルアプリケーションは、ボタンを押下すると「Hello Template」と表示されるシンプルなWebアプリケーションです。ボタンのクリック数はPostgreSQLデータベースに保存され、Client-Server-Database の3層アーキテクチャを完全に実装しています。
+This sample application is a simple web application that displays "Hello Template" when a button is pressed. The button click count is stored in a PostgreSQL database, fully implementing a 3-tier Client-Server-Database architecture.
 
-### 技術スタック
+### Technology Stack
 
-- **フロントエンド**: React 18 + Axios
-- **バックエンド**: Python 3.11 + FastAPI + SQLAlchemy
-- **データベース**: PostgreSQL 16
-- **コンテナ**: Docker + Docker Compose
+- **Frontend**: React 18 + Axios
+- **Backend**: Python 3.11 + FastAPI + SQLAlchemy
+- **Database**: PostgreSQL 16
+- **Container**: Docker + Docker Compose
 
-### 主な機能
+### Main Features
 
-- 🎯 **シンプルなボタン**: クリックで「Hello Template」メッセージを表示
-- 📊 **クリック数カウント**: データベースにクリック履歴を保存・表示
-- 🏗️ **3層アーキテクチャ**: Client → Server → Database の完全な連携
+- 🎯 **Simple Button**: Click to display "Hello Template" message
+- 📊 **Click Counter**: Save and display click history in database
+- 🏗️ **3-Tier Architecture**: Complete integration of Client → Server → Database
 
-## 🚀 クイックスタート
+## 🚀 Quick Start
 
-### 前提条件
+### Prerequisites
 
 - Docker
 - Docker Compose
 
-### アプリケーションの起動
+### Starting the Application
 
-1. **プロジェクトディレクトリに移動**
+1. **Navigate to project directory**
    ```bash
    cd /workspaces/template.utils/app
    ```
 
-2. **Docker Composeでサービスを起動**
+2. **Start services with Docker Compose**
    ```bash
    docker-compose up --build
    ```
 
-3. **アプリケーションにアクセス**
-   - フロントエンド: http://localhost:3000
-   - バックエンドAPI: http://localhost:8000
-   - API ドキュメント: http://localhost:8000/docs
+3. **Access the application**
+   - Frontend: http://localhost:3000
+   - Backend API: http://localhost:8000
+   - API Documentation: http://localhost:8000/docs
 
-### サービスの停止
+### Stopping Services
 
 ```bash
 docker-compose down
 ```
 
-## 🏗️ アーキテクチャ
+## 🏗️ Architecture
 
 ```mermaid
 sequenceDiagram
@@ -65,34 +65,34 @@ sequenceDiagram
     SV->>CL: {"message": "Hello Template! 🎉", "click_count": N}
 ```
 
-## 📁 プロジェクト構造
+## 📁 Project Structure
 
 ```
 app/
-├── client/                    # Reactクライアントアプリケーション
+├── client/                    # React client application
 │   ├── public/
-│   │   └── index.html         # HTMLテンプレート
+│   │   └── index.html         # HTML template
 │   ├── src/
-│   │   ├── App.js            # メインアプリケーション（ボタンとロジック）
-│   │   ├── App.css           # アプリケーションスタイル
-│   │   ├── index.js          # エントリーポイント
-│   │   └── index.css         # グローバルスタイル
-│   ├── package.json          # Node.js依存関係
-│   └── Dockerfile            # クライアント用Dockerfile
-├── server/                    # Python FastAPIサーバー
+│   │   ├── App.js            # Main application (button and logic)
+│   │   ├── App.css           # Application styles
+│   │   ├── index.js          # Entry point
+│   │   └── index.css         # Global styles
+│   ├── package.json          # Node.js dependencies
+│   └── Dockerfile            # Client Dockerfile
+├── server/                    # Python FastAPI server
 │   ├── src/
-│   │   └── main.py           # FastAPIアプリケーション
-│   ├── requirements.txt      # Python依存関係
-│   └── Dockerfile            # サーバー用Dockerfile
-├── docker-compose.yml        # Docker Compose設定
-└── README.md                 # このファイル
+│   │   └── main.py           # FastAPI application
+│   ├── requirements.txt      # Python dependencies
+│   └── Dockerfile            # Server Dockerfile
+├── docker-compose.yml        # Docker Compose configuration
+└── README.md                 # This file
 ```
 
-## 🔌 API エンドポイント
+## 🔌 API Endpoints
 
 ### Hello Template API
 
-- `POST /api/hello` - ボタンクリックを記録し、メッセージとクリック数を返す
+- `POST /api/hello` - Record button click and return message with click count
   ```json
   {
     "message": "Hello Template! 🎉",
@@ -100,7 +100,7 @@ app/
   }
   ```
 
-- `GET /api/stats` - クリック統計を取得
+- `GET /api/stats` - Get click statistics
   ```json
   {
     "total_clicks": 1,
@@ -108,104 +108,104 @@ app/
   }
   ```
 
-### その他のエンドポイント
+### Other Endpoints
 
-- `GET /` - API情報
-- `GET /health` - ヘルスチェック
-- `GET /docs` - Swagger UI (API ドキュメント)
+- `GET /` - API information
+- `GET /health` - Health check
+- `GET /docs` - Swagger UI (API documentation)
 
-## 🗄️ データベーススキーマ
+## 🗄️ Database Schema
 
-### click_logs テーブル
+### click_logs Table
 
-| カラム名 | データ型 | 制約 | 説明 |
-|----------|----------|------|------|
-| id | INTEGER | PRIMARY KEY | クリックID |
-| clicked_at | TIMESTAMP | DEFAULT NOW() | クリック日時 |
+| Column | Data Type | Constraint | Description |
+|--------|-----------|------------|-------------|
+| id | INTEGER | PRIMARY KEY | Click ID |
+| clicked_at | TIMESTAMP | DEFAULT NOW() | Click timestamp |
 
-## 🎮 使用方法
+## 🎮 Usage
 
-1. **ブラウザでアクセス**: http://localhost:3000
-2. **「Click Me!」ボタンをクリック**:
-   - 「Hello Template! 🎉」メッセージが表示される
-   - クリック数がカウントアップされる
-   - データベースにクリック履歴が保存される
-3. **リアルタイム更新**: ページを再読み込みしてもクリック数が保持される
+1. **Access via browser**: http://localhost:3000
+2. **Click the "Click Me!" button**:
+   - "Hello Template! 🎉" message is displayed
+   - Click count increments
+   - Click history is saved to database
+3. **Real-time updates**: Click count persists even after page reload
 
-## 🛠️ 開発環境
+## 🛠️ Development Environment
 
-### ローカル開発
+### Local Development
 
-各サービスを個別に起動することも可能です：
+You can also start each service individually:
 
 ```bash
-# データベースのみ起動
-docker-compose up sample_db
+# Start database only
+docker-compose up db
 
-# サーバーをローカルで起動
+# Start server locally
 cd server
 pip install -r requirements.txt
 uvicorn src.main:app --reload --host 0.0.0.0 --port 8000
 
-# クライアントをローカルで起動
+# Start client locally
 cd client
 npm install
 npm start
 ```
 
-### ログの確認
+### Viewing Logs
 
 ```bash
-# 全サービスのログを確認
+# View logs for all services
 docker-compose logs
 
-# 特定のサービスのログを確認
+# View logs for specific service
 docker-compose logs client
 docker-compose logs server
-docker-compose logs sample_db
+docker-compose logs db
 ```
 
-## 🔧 トラブルシューティング
+## 🔧 Troubleshooting
 
-### よくある問題
+### Common Issues
 
-1. **ポートが既に使用されている場合**
+1. **Port already in use**
    ```bash
-   # 使用中のポートを確認
+   # Check ports in use
    lsof -i :3000
    lsof -i :8000
    lsof -i :5432
    ```
 
-2. **データベース接続エラー**
+2. **Database connection error**
    ```bash
-   # データベースの状態を確認
-   docker-compose exec sample_db pg_isready -U postgres
+   # Check database status
+   docker-compose exec db pg_isready -U postgres
    ```
 
-3. **依存関係のエラー**
+3. **Dependency errors**
    ```bash
-   # コンテナを再ビルド
+   # Rebuild containers
    docker-compose up --build --force-recreate
    ```
 
-4. **データをリセットしたい場合**
+4. **Reset data**
    ```bash
-   # ボリュームも含めて完全削除
+   # Complete removal including volumes
    docker-compose down -v
    docker-compose up --build
    ```
 
-## 🎯 アーキテクチャのポイント
+## 🎯 Architecture Highlights
 
-このアプリケーションは、シンプルな機能でありながら、本格的なWebアプリケーションの3層アーキテクチャを完全に実装しています：
+This application, while simple in functionality, fully implements a professional 3-tier web application architecture:
 
-1. **プレゼンテーション層 (Client)**: React による UI とユーザーインタラクション
-2. **アプリケーション層 (Server)**: FastAPI による ビジネスロジックとAPI提供
-3. **データ層 (Database)**: PostgreSQL によるデータ永続化
+1. **Presentation Layer (Client)**: React UI and user interactions
+2. **Application Layer (Server)**: FastAPI business logic and API provision
+3. **Data Layer (Database)**: PostgreSQL data persistence
 
-この構成により、スケーラブルで保守性の高いアプリケーション開発の基礎を学ぶことができます。
+This structure allows you to learn the fundamentals of scalable and maintainable application development.
 
-## 📝 ライセンス
+## 📝 License
 
-このプロジェクトはサンプル用途のため、自由に使用・改変してください。
+This project is for sample purposes and is free to use and modify.

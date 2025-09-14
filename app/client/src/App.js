@@ -8,7 +8,7 @@ function App() {
   const [error, setError] = useState('');
   const [clickCount, setClickCount] = useState(0);
 
-  // ボタンクリック時の処理
+  // Handle button click
   const handleButtonClick = async () => {
     setLoading(true);
     setError('');
@@ -18,7 +18,7 @@ function App() {
       setMessage(response.data.message);
       setClickCount(response.data.click_count);
     } catch (err) {
-      setError('サーバーへの接続に失敗しました: ' + err.message);
+      setError('Failed to connect to server: ' + err.message);
     } finally {
       setLoading(false);
     }
@@ -28,7 +28,7 @@ function App() {
     <div className="container">
       <div className="header">
         <h1>🚀 Template Utils - Hello Template App</h1>
-        <p>React + Python + PostgreSQLのシンプルなサンプルアプリケーション</p>
+        <p>Simple sample application with React + Python + PostgreSQL</p>
       </div>
 
       {error && <div className="error">{error}</div>}
@@ -69,19 +69,19 @@ function App() {
               fontSize: '16px',
               color: '#666'
             }}>
-              総クリック回数: {clickCount} 回
+              Total clicks: {clickCount}
             </div>
           )}
         </div>
       </div>
 
       <div className="card">
-        <h3>🏗️ アーキテクチャ情報</h3>
+        <h3>🏗️ Architecture Information</h3>
         <ul style={{ textAlign: 'left', lineHeight: '1.6' }}>
-          <li><strong>フロントエンド:</strong> React (このページ)</li>
-          <li><strong>バックエンド:</strong> Python FastAPI</li>
-          <li><strong>データベース:</strong> PostgreSQL</li>
-          <li><strong>機能:</strong> ボタンクリック数をDBに保存・取得</li>
+          <li><strong>Frontend:</strong> React (this page)</li>
+          <li><strong>Backend:</strong> Python FastAPI</li>
+          <li><strong>Database:</strong> PostgreSQL</li>
+          <li><strong>Feature:</strong> Save and retrieve button click counts to/from DB</li>
         </ul>
       </div>
     </div>

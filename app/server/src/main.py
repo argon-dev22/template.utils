@@ -7,34 +7,38 @@ from pydantic import BaseModel
 from datetime import datetime
 import os
 
-# データベース設定
+# Database configuration
 DATABASE_URL = os.getenv("DATABASE_URL")
 
 engine = create_engine(DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
 
-# データベースモデル
+# Database model
+
+
 class ClickLogModel(Base):
     __tablename__ = "click_logs"
 
     id = Column(Integer, primary_key=True, index=True)
     clicked_at = Column(DateTime, default=datetime.utcnow)
 
-# Pydanticモデル
+# Pydantic model
+
+
 class HelloResponse(BaseModel):
     message: str
     click_count: int
 
 
-# FastAPIアプリケーション初期化
+# Initialize FastAPI application
 app = FastAPI(
     title="Template Utils API",
-    description="React + Python + PostgreSQL シンプルなHello Templateアプリ",
+    description="Simple Hello Template App with React + Python + PostgreSQL",
     version="1.0.0"
 )
 
-# CORS設定
+# CORS configuration
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:3000", "http://client:3000"],
@@ -43,7 +47,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# データベース依存性
+# Database dependency
+
+
 def get_db():
     db = SessionLocal()
     try:
@@ -51,35 +57,43 @@ def get_db():
     finally:
         db.close()
 
-# データベーステーブル作成
+# Create database tables
+
+
 @app.on_event("startup")
 async def startup_event():
     Base.metadata.create_all(bind=engine)
 
-# ルートエンドポイント
+# Root endpoint
+
+
 @app.get("/")
 async def root():
     return {
         "message": "Template Utils API - Hello Template App",
         "version": "1.0.0",
-        "description": "React + Python + PostgreSQL シンプルなサンプルアプリケーション"
+        "description": "Simple sample application with React + Python + PostgreSQL"
     }
 
-# ヘルスチェック
+# Health check
+
+
 @app.get("/health")
 async def health_check():
     return {"status": "healthy", "timestamp": datetime.utcnow()}
 
-# Hello Template エンドポイント
+# Hello Template endpoint
+
+
 @app.post("/api/hello", response_model=HelloResponse)
 async def hello_template(db: Session = Depends(get_db)):
     try:
-        # クリックログを保存
+        # Save click log
         click_log = ClickLogModel()
         db.add(click_log)
         db.commit()
 
-        # 総クリック数を取得
+        # Get total click count
         total_clicks = db.query(func.count(ClickLogModel.id)).scalar()
 
         return HelloResponse(
@@ -88,9 +102,12 @@ async def hello_template(db: Session = Depends(get_db)):
         )
     except Exception as e:
         db.rollback()
-        raise HTTPException(status_code=500, detail=f"データベースエラー: {str(e)}")
+        raise HTTPException(
+            status_code=500, detail=f"Database error: {str(e)}")
 
-# クリック統計取得
+# Get click statistics
+
+
 @app.get("/api/stats")
 async def get_stats(db: Session = Depends(get_db)):
     try:
@@ -103,7 +120,8 @@ async def get_stats(db: Session = Depends(get_db)):
             "latest_click": latest_click.clicked_at if latest_click else None
         }
     except Exception as e:
-        raise HTTPException(status_code=500, detail=f"データベースエラー: {str(e)}")
+        raise HTTPException(
+            status_code=500, detail=f"Database error: {str(e)}")
 
 if __name__ == "__main__":
     import uvicorn
