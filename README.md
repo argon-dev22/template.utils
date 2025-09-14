@@ -32,6 +32,7 @@ sequenceDiagram
 
 ### Prerequisites
 
+- [Docker](https://www.docker.com/) must be installed
 - [Dev Containers](https://containers.dev/) extension (`anysphere.remote-containers`) must be installed
 - UNIX/Linux-based OS (For Windows, WSL2 is recommended)
 
