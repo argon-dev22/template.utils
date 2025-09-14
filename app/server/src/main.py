@@ -8,16 +8,13 @@ from datetime import datetime
 import os
 
 # データベース設定
-DATABASE_URL = os.getenv(
-    "DATABASE_URL", "postgresql://postgres:postgres@sample_db:5432/postgres")
+DATABASE_URL = os.getenv("DATABASE_URL")
 
 engine = create_engine(DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
 
 # データベースモデル
-
-
 class ClickLogModel(Base):
     __tablename__ = "click_logs"
 
@@ -25,8 +22,6 @@ class ClickLogModel(Base):
     clicked_at = Column(DateTime, default=datetime.utcnow)
 
 # Pydanticモデル
-
-
 class HelloResponse(BaseModel):
     message: str
     click_count: int
@@ -49,8 +44,6 @@ app.add_middleware(
 )
 
 # データベース依存性
-
-
 def get_db():
     db = SessionLocal()
     try:
@@ -59,15 +52,11 @@ def get_db():
         db.close()
 
 # データベーステーブル作成
-
-
 @app.on_event("startup")
 async def startup_event():
     Base.metadata.create_all(bind=engine)
 
 # ルートエンドポイント
-
-
 @app.get("/")
 async def root():
     return {
@@ -77,15 +66,11 @@ async def root():
     }
 
 # ヘルスチェック
-
-
 @app.get("/health")
 async def health_check():
     return {"status": "healthy", "timestamp": datetime.utcnow()}
 
 # Hello Template エンドポイント
-
-
 @app.post("/api/hello", response_model=HelloResponse)
 async def hello_template(db: Session = Depends(get_db)):
     try:
@@ -106,8 +91,6 @@ async def hello_template(db: Session = Depends(get_db)):
         raise HTTPException(status_code=500, detail=f"データベースエラー: {str(e)}")
 
 # クリック統計取得
-
-
 @app.get("/api/stats")
 async def get_stats(db: Session = Depends(get_db)):
     try:
