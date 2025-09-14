@@ -45,8 +45,7 @@ cd <project-name>
 ### 2. プロジェクトを初期化する
 
 ```bash
-chmod +x ./bin/setup-container.sh
-./bin/setup-container.sh
+make init
 ```
 
 ### 3. Dev Containersを起動する
@@ -62,8 +61,7 @@ chmod +x ./bin/setup-container.sh
 ### 3. 開発環境でアプリケーションを起動する
 
 ```bash
-cd ./app/
-docker compose up
+make up
 ```
 
 ### 4. アプリケーションにアクセスする
