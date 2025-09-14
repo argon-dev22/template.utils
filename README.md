@@ -22,6 +22,20 @@ sequenceDiagram
 
 ## Directory Structure
 
+```
+.
+├── .devcontainer/                # Development container configuration
+├── .github/                      # GitHub configuration
+│   ├── ISSUE_TEMPLATE/           # GitHub issue templates
+│   └── PULL_REQUEST_TEMPLATE/    # GitHub PR templates
+├── .vscode/                      # VSCode configuration
+├── app/                          # Application source code
+│   ├── sample_go/                # Go application sample
+│   └── sample_py/                # Python application sample
+├── bin/                          # Utility scripts
+└── docs/                         # Project documentation
+```
+
 ## Environment Variables
 
 |Name|Description|Required|Default|
