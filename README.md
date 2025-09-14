@@ -28,43 +28,43 @@ sequenceDiagram
 |---|---|---|---|
 |`EXAMPLE_VARIABLE`|Environmental Variable Example|〇|-|
 
-## 初回セットアップ（環境構築）
+## Initial Setup (Environment Configuration)
 
-### 前提条件
+### Prerequisites
 
-- [Dev Containers](https://containers.dev/)の拡張機能（`anysphere.remote-containers`）をインストールしていること
-- UNIX/Linux系のOSであること ※ Windowsの場合はWSL2を利用推奨
+- [Dev Containers](https://containers.dev/) extension (`anysphere.remote-containers`) must be installed
+- UNIX/Linux-based OS (For Windows, WSL2 is recommended)
 
-### 1. リポジトリをクローンする
+### 1. Clone the Repository
 
 ```bash
 git clone <repo-url> <project-name>
 cd <project-name>
 ```
 
-### 2. プロジェクトを初期化する
+### 2. Initialize the Project
 
 ```bash
 make init
 ```
 
-### 3. Dev Containersを起動する
+### 3. Launch Dev Containers
 
-1. VSCodeで「^P」を押してコマンドパレットを開く
+1. Press `^P` in VSCode to open the command palette
 
-2. 検索窓に「> `Dev Containers: Open Folder in Container`」と入力する
+2. Type `> Dev Containers: Open Folder in Container` in the search box
 
-3. 表示された候補を選択して実行（Dev Containers起動）
+3. Select and execute the displayed option (Launch Dev Containers)
 
-以降の手順はDev Containers内で行う。
+Perform the following steps inside the Dev Container.
 
-### 3. 開発環境でアプリケーションを起動する
+### 4. Start the Application in Development Environment
 
 ```bash
 make up
 ```
 
-### 4. アプリケーションにアクセスする
+### 5. Access the Application
 
-ブラウザで以下のURLにアクセス:
-- **アプリケーション**: http://localhost:3000
+Access the following URL in your browser:
+- **Application**: http://localhost:3000
