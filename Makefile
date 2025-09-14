@@ -1,8 +1,8 @@
 .PHONY: init build up down logs clean
 
 init:
-	@chmod +x ./bin/setup-project.sh
-	@./bin/setup-project.sh
+	@chmod +x ./bin/init-project.sh
+	@./bin/init-project.sh
 
 build:
 	@cd app && docker-compose build
