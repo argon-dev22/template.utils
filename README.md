@@ -1,10 +1,12 @@
-# {Project Name}
+# Template Utils
 
 ## Overview
 
-This project provides a comprehensive template for utility applications with integrated development container support, GitHub issue templates, and automated workflow configurations. It includes pre-configured development environments, standardized issue reporting templates, and essential project structure for rapid development setup.
+A comprehensive project template that provides a ready-to-use development environment with modern tooling and best practices. This template accelerates project setup by including pre-configured development containers, GitHub workflows, and standardized templates for issues and pull requests.
 
-## Main Logic
+## Features
+
+- 
 
 ## Architecture
 
@@ -36,50 +38,42 @@ sequenceDiagram
 └── docs/                         # Project documentation
 ```
 
+## Getting Started
+
+### Prerequisites
+
+- [Docker](https://www.docker.com/)
+- [Dev Containers](https://containers.dev/) extension (`anysphere.remote-containers`) for VSCode
+- UNIX/Linux-based OS (Windows users should use WSL2)
+
+### Quick Start
+
+1. **Clone the repository**
+   ```bash
+   git clone <repo-url> <project-name>
+   cd <project-name>
+   ```
+
+2. **Initialize the project**
+   ```bash
+   make init
+   ```
+
+3. **Open in Dev Container**
+   - Press `Ctrl+Shift+P` (or `Cmd+Shift+P` on Mac) in VSCode
+   - Type `Dev Containers: Open Folder in Container`
+   - Select and execute the command
+
+4. **Start the development environment**
+   ```bash
+   make up
+   ```
+
+5. **Access your application**
+   - Open your browser and navigate to: http://localhost:3000
+
 ## Environment Variables
 
 |Name|Description|Required|Default|
 |---|---|---|---|
-|`EXAMPLE_VARIABLE`|Environmental Variable Example|〇|-|
-
-## Initial Setup (Environment Configuration)
-
-### Prerequisites
-
-- [Docker](https://www.docker.com/) must be installed
-- [Dev Containers](https://containers.dev/) extension (`anysphere.remote-containers`) must be installed
-- UNIX/Linux-based OS (For Windows, WSL2 is recommended)
-
-### 1. Clone the Repository
-
-```bash
-git clone <repo-url> <project-name>
-cd <project-name>
-```
-
-### 2. Initialize the Project
-
-```bash
-make init
-```
-
-### 3. Launch Dev Containers
-
-1. Press `^P` in VSCode to open the command palette
-
-2. Type `> Dev Containers: Open Folder in Container` in the search box
-
-3. Select and execute the displayed option (Launch Dev Containers)
-
-Perform the following steps inside the Dev Container.
-
-### 4. Start the Application in Development Environment
-
-```bash
-make up
-```
-
-### 5. Access the Application
-
-Access the following URL in your browser:
-- **Application**: http://localhost:3000
+|`EXAMPLE_VARIABLE`|Environmental Variable Example|✅|-|
