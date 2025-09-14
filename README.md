@@ -1,20 +1,39 @@
-# プロジェクト名
+# {Project Name}
 
-汎用テンプレートとして使用できるリポジトリ。
+## Overview
 
-## 環境変数
+This project provides a comprehensive template for utility applications with integrated development container support, GitHub issue templates, and automated workflow configurations. It includes pre-configured development environments, standardized issue reporting templates, and essential project structure for rapid development setup.
 
-|名前|説明|必須|
-|---|---|---|
-|`EXAMPLE_VARIABLE`|Environmental Variable Example|〇|
+## Main Logic
 
-## クイックスタート
+## Architecture
 
-## 前提条件
+```mermaid
+sequenceDiagram
+    autonumber
+    actor CL as Client
+    participant SV as Server
+    participant DB as Database
+    CL->>SV: Request
+    SV->>DB: Request
+    DB->>SV: Response
+    SV->>CL: Response
+```
 
-- [Dev Containers](https://containers.dev/)の拡張昨日をインストールしていること
+## Directory Structure
 
-## セットアップ例（macOS/Linux環境）
+## Environment Variables
+
+|Name|Description|Required|Default|
+|---|---|---|---|
+|`EXAMPLE_VARIABLE`|Environmental Variable Example|〇|-|
+
+## 初回セットアップ（環境構築）
+
+### 前提条件
+
+- [Dev Containers](https://containers.dev/)の拡張機能をインストールしていること
+- UNIX/Linux系のOSであること ※ Windowsの場合はWSL2を利用推奨
 
 ### 1. リポジトリをクローンする
 
@@ -26,9 +45,8 @@ cd <project-name>
 ### 2. プロジェクトを初期化する
 
 ```bash
-bash ./bin/setup-container.sh
-# または
-zsh ./bin/setup-container.sh
+chmod +x ./bin/setup-container.sh
+./bin/setup-container.sh
 ```
 
 ### 3. Dev Containersを起動する
