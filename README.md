@@ -1,54 +1,79 @@
-# プロジェクト名
+# Template Utils
 
-汎用テンプレートとして使用できるリポジトリ。
+## Overview
 
-## 環境変数
+A comprehensive project template that provides a ready-to-use development environment with modern tooling and best practices. This template accelerates project setup by including pre-configured development containers, GitHub workflows, and standardized templates for issues and pull requests.
 
-|名前|説明|必須|
-|---|---|---|
-|`EXAMPLE_VARIABLE`|Environmental Variable Example|〇|
+## Features
 
-## クイックスタート
+- 
 
-## 前提条件
+## Architecture
 
-- [Dev Containers](https://containers.dev/)の拡張昨日をインストールしていること
-
-## セットアップ例（macOS/Linux環境）
-
-### 1. リポジトリをクローンする
-
-```bash
-git clone <repo-url> <project-name>
-cd <project-name>
+```mermaid
+sequenceDiagram
+    autonumber
+    actor CL as Client
+    participant SV as Server
+    participant DB as Database
+    CL->>SV: Request
+    SV->>DB: Request
+    DB->>SV: Response
+    SV->>CL: Response
 ```
 
-### 2. プロジェクトを初期化する
+## Directory Structure
 
-```bash
-bash ./bin/setup-container.sh
-# または
-zsh ./bin/setup-container.sh
+```
+.
+├── .devcontainer/                # Development container configuration
+├── .github/                      # GitHub configuration
+│   ├── ISSUE_TEMPLATE/           # GitHub issue templates
+│   └── PULL_REQUEST_TEMPLATE/    # GitHub PR templates
+├── .vscode/                      # VSCode configuration
+├── app/                          # Application source code
+│   ├── sample_go/                # Go application sample
+│   └── sample_py/                # Python application sample
+├── bin/                          # Utility scripts
+└── docs/                         # Project documentation
 ```
 
-### 3. Dev Containersを起動する
+## Getting Started
 
-1. VSCodeで「^P」を押してコマンドパレットを開く
+### Prerequisites
 
-2. 検索窓に「> `Dev Containers: Open Folder in Container`」と入力する
+- [Docker](https://www.docker.com/)
+- [Dev Containers](https://containers.dev/) extension (`anysphere.remote-containers`) for VSCode
+- UNIX/Linux-based OS (Windows users should use WSL2)
 
-3. 表示された候補を選択して実行（Dev Containers起動）
+### Quick Start
 
-以降の手順はDev Containers内で行う。
+1. **Clone the repository**
+   ```bash
+   git clone <repo-url> <project-name>
+   cd <project-name>
+   ```
 
-### 3. 開発環境でアプリケーションを起動する
+2. **Initialize the project**
+   ```bash
+   make init
+   ```
 
-```bash
-cd ./app/
-docker compose up
-```
+3. **Open in Dev Container**
+   - Press `Ctrl+Shift+P` (or `Cmd+Shift+P` on Mac) in VSCode
+   - Type `Dev Containers: Open Folder in Container`
+   - Select and execute the command
 
-### 4. アプリケーションにアクセスする
+4. **Start the development environment**
+   ```bash
+   make up
+   ```
 
-ブラウザで以下のURLにアクセス:
-- **アプリケーション**: http://localhost:3000
+5. **Access your application**
+   - Open your browser and navigate to: http://localhost:3000
+
+## Environment Variables
+
+|Name|Description|Required|Default|
+|---|---|---|---|
+|`EXAMPLE_VARIABLE`|Environmental Variable Example|✅|-|
