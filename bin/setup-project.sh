@@ -1,5 +1,4 @@
-
-#! /bin/bash
+#!/usr/bin/env bash
 
 echo "Githubのユーザー名を入力してください:"
 read gh_user_name
