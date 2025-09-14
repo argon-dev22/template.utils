@@ -9,13 +9,7 @@
   "features": {
     "ghcr.io/devcontainers/features/common-utils:2.5.3": {},
     "ghcr.io/devcontainers/features/docker-in-docker:2": {},
-    "ghcr.io/devcontainers/features/git:1": {},
-    "ghcr.io/devcontainers/features/go:1": {
-      "version": "1.23"
-    },
-    "ghcr.io/devcontainers/features/python:1": {
-      "version": "3.9"
-    }
+    "ghcr.io/devcontainers/features/git:1": {}
   },
   "customizations": {
     "vscode": {
@@ -23,9 +17,9 @@
         "ms-azuretools.vscode-docker",
         "ms-azuretools.vscode-containers",
         "editorconfig.editorconfig",
+        "bierner.markdown-mermaid",
         "cweijan.vscode-database-client2",
         "cweijan.dbclient-jdbc",
-        "golang.go",
         "ms-python.python"
       ]
     }
