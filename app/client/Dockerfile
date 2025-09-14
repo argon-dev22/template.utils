@@ -1,7 +1,18 @@
-FROM node:22-alpine
+FROM node:18-alpine
 
 WORKDIR /app
 
-COPY ./src .
+# package.jsonとpackage-lock.jsonをコピー
+COPY package*.json ./
 
-CMD ["node", "index.js"]
+# 依存関係をインストール
+RUN npm install
+
+# ソースコードをコピー
+COPY . .
+
+# ポート3000を公開
+EXPOSE 3000
+
+# 開発サーバーを起動
+CMD ["npm", "start"]

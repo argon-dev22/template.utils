@@ -13,13 +13,13 @@ A comprehensive project template that provides a ready-to-use development enviro
 ```mermaid
 sequenceDiagram
     autonumber
-    actor CL as Client
-    participant SV as Server
-    participant DB as Database
-    CL->>SV: Request
-    SV->>DB: Request
-    DB->>SV: Response
-    SV->>CL: Response
+    actor CL as Client (React)
+    participant SV as Server (FastAPI)
+    participant DB as Database (PostgreSQL)
+    CL->>SV: HTTP Request (API Call)
+    SV->>DB: SQL Query
+    DB->>SV: Query Result
+    SV->>CL: JSON Response
 ```
 
 ## Directory Structure
