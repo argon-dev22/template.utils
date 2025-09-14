@@ -6,7 +6,7 @@ A comprehensive project template that provides a ready-to-use development enviro
 
 ## Features
 
-- 
+-
 
 ## Architecture
 
@@ -71,9 +71,3 @@ sequenceDiagram
 
 5. **Access your application**
    - Open your browser and navigate to: http://localhost:3000
-
-## Environment Variables
-
-|Name|Description|Required|Default|
-|---|---|---|---|
-|`EXAMPLE_VARIABLE`|Environmental Variable Example|✅|-|
