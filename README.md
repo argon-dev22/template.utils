@@ -32,7 +32,7 @@ sequenceDiagram
 
 ### 前提条件
 
-- [Dev Containers](https://containers.dev/)の拡張機能をインストールしていること
+- [Dev Containers](https://containers.dev/)の拡張機能（`anysphere.remote-containers`）をインストールしていること
 - UNIX/Linux系のOSであること ※ Windowsの場合はWSL2を利用推奨
 
 ### 1. リポジトリをクローンする
