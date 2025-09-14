@@ -22,7 +22,8 @@ services:
       - ./server:/app
     environment:
       - DATABASE_URL=postgresql://postgres:postgres@db:5432/postgres
-      - PYTHONPATH=/app
+      - PYTHONPATH=/app/src:/app
+    command: ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
     depends_on:
       - db
 

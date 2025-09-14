@@ -12,10 +12,10 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # ソースコードをコピー
-COPY ./src .
+COPY ./src/ .
 
 # ポート8000を公開
 EXPOSE 8000
 
 # FastAPIサーバーを起動
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
+CMD ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
