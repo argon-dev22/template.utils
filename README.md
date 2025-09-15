@@ -18,12 +18,6 @@ A comprehensive project template that provides a ready-to-use development enviro
 - **API Documentation**: Auto-generated documentation with Swagger UI
 - **Responsive UI**: Modern web interface
 
-### 🛠️ Development Tools
-- **Hot Reload**: Automatic updates during development
-- **Containerization**: Consistent development experience without environment dependencies
-- **Log Management**: Detailed log monitoring for each service
-- **Health Checks**: Service status monitoring capabilities
-
 ## Architecture
 
 ```mermaid
