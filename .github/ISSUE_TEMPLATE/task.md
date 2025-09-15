@@ -1,9 +1,7 @@
 ---
 name: Task
 about: Create a new task
-title: '[TASK] '
-labels: task
-assignees: ''
+assignees: 'argondev22'
 ---
 
 ## Description
