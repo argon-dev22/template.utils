@@ -6,11 +6,10 @@
     "ghcr.io/devcontainers/features/docker-in-docker:2": {},
     "ghcr.io/devcontainers/features/git:1": {}
   },
-  "forwardPorts": [3000],
+  "postCreateCommand": "git config --global user.name 'Your Name' && git config --global user.email 'your.email@example.com'",
   "mounts": [
     "source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind"
   ],
-  "postCreateCommand": "git config --global user.name 'Your Name' && git config --global user.email 'your.email@example.com'",
   "customizations": {
     "vscode": {
       "extensions": [
@@ -23,5 +22,6 @@
         "ms-python.python"
       ]
     }
-  }
+  },
+  "forwardPorts": [3000]
 }
