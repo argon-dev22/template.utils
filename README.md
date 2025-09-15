@@ -41,12 +41,16 @@ sequenceDiagram
 │   ├── ISSUE_TEMPLATE/           # GitHub issue templates
 │   └── PULL_REQUEST_TEMPLATE/    # GitHub PR templates
 ├── .vscode/                      # VSCode configuration
-├── app/                          # Application source code
-│   ├── sample_go/                # Go application sample
-│   └── sample_py/                # Python application sample
+├── app/                          # Complete application directory (source code, Docker configs, etc.)
+│   ├── client/                   # React frontend application
+│   └── server/                   # FastAPI backend application
 ├── bin/                          # Utility scripts
 └── docs/                         # Project documentation
 ```
+
+> **📖 For detailed information about each service, please refer to their respective README files:**
+> - **Client (React)**: [`app/client/README.md`](app/client/README.md)
+> - **Server (FastAPI)**: [`app/server/README.md`](app/server/README.md)
 
 ## Getting Started
 
