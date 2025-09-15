@@ -6,7 +6,23 @@ A comprehensive project template that provides a ready-to-use development enviro
 
 ## Features
 
--
+### 🚀 Development Environment Template
+- **Dev Containers**: Instant development environment setup with VSCode
+- **Docker Compose**: Easy multi-service environment management
+- **GitHub Templates**: Standardized issue and PR templates
+
+### 📱 Sample Application
+- **Full-Stack Architecture**: 3-tier architecture with React + FastAPI + PostgreSQL
+- **Real-time Features**: Instant data updates with button clicks
+- **Data Persistence**: Click history management with PostgreSQL
+- **API Documentation**: Auto-generated documentation with Swagger UI
+- **Responsive UI**: Modern web interface
+
+### 🛠️ Development Tools
+- **Hot Reload**: Automatic updates during development
+- **Containerization**: Consistent development experience without environment dependencies
+- **Log Management**: Detailed log monitoring for each service
+- **Health Checks**: Service status monitoring capabilities
 
 ## Architecture
 
