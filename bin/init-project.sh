@@ -1,30 +1,29 @@
+#!/usr/bin/env bash
 
-#! /bin/bash
-
-echo "Githubのユーザー名を入力してください:"
+echo "Enter your GitHub username (or organization name):"
 read gh_user_name
 
 echo ""
 
-echo "Githubのメールアドレスを入力してください:"
+echo "Enter your GitHub email address:"
 read gh_email
 
 echo ""
 
 echo "--------------------------------"
-echo "設定内容:"
-echo "Githubのユーザー名: $gh_user_name"
-echo "Githubのメールアドレス: $gh_email"
+echo "Configuration:"
+echo "GitHub username (organization): $gh_user_name"
+echo "GitHub email address: $gh_email"
 echo "--------------------------------"
 echo ""
 
-echo "上記の設定で続行しますか？ (y/n):"
+echo "Proceed with the above settings? (y/n):"
 read confirmation
 
 echo ""
 
 if [[ $confirmation == "y" || $confirmation == "Y" ]]; then
-    echo "プロジェクトのセットアップを開始します..."
+    echo "Starting project setup..."
     cp ./.devcontainer/devcontainer.example.json ./.devcontainer/devcontainer.json
 
     sed -i "s/Your Name/$gh_user_name/g" ./.devcontainer/devcontainer.json
@@ -32,11 +31,11 @@ if [[ $confirmation == "y" || $confirmation == "Y" ]]; then
 
     cp ./app/docker-compose.example.yml ./app/docker-compose.yml
 
-    echo "プロジェクトのセットアップが完了しました。"
+    echo "Project setup complete."
 
     echo ""
-    echo "Dev Containerを起動してください。"
+    echo "Please start the Dev Container."
 else
-    echo "キャンセルされました。"
+    echo "Operation cancelled."
     exit 1
 fi

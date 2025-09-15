@@ -1,29 +1,46 @@
 services:
 
-  sample_go:
-    image: template.utils/sample-go
-    build: ./sample_go
+  client:
+    image: client
+    build: ./client
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./client:/app
+      - /app/node_modules
     environment:
-      - EXAMPLE_VARIABLE="Environmental Variable Example"
-    volumes:
-      - ./sample_go/src:/app
+      - CHOKIDAR_USEPOLLING=true
+    depends_on:
+      - server
 
-  sample_py:
-    image: template.utils/sample-py
-    build: ./sample_py
+  server:
+    image: server
+    build: ./server
+    ports:
+      - "8000:8000"
     volumes:
-      - ./sample_py/src:/app
+      - ./server:/app
+    environment:
+      - DATABASE_URL=postgresql://postgres:postgres@db:5432/postgres
+      - PYTHONPATH=/app/src:/app
+    depends_on:
+      - db
 
-  sample_db:
+  db:
     image: postgres:16
     ports:
-      - 5432:5432
+      - "5432:5432"
     volumes:
-      - sample_data:/var/lib/postgresql/data
+      - db_data:/var/lib/postgresql/data
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
       - POSTGRES_DB=postgres
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
 volumes:
-  sample_data:
+  db_data:
