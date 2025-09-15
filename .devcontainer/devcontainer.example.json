@@ -1,5 +1,5 @@
 {
-  "name": "dev",
+  "name": "template.utils",
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
   "forwardPorts": [3000],
   "mounts": [
