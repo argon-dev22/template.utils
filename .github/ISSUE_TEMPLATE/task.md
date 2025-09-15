@@ -1,0 +1,18 @@
+---
+name: Task
+about: Create a new task
+title: '[TASK] '
+labels: task
+assignees: ''
+---
+
+## Description
+<!-- Brief description of the task -->
+
+## Acceptance Criteria
+<!-- What needs to be done to complete this task -->
+- [ ]
+- [ ]
+
+## Notes
+<!-- Any additional information (optional) -->
