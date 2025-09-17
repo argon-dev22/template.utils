@@ -3,7 +3,6 @@
 
 ## Changes
 - [ ]
-- [ ]
 
 ## How to test
 <!-- Steps to test the changes -->
