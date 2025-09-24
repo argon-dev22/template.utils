@@ -7,4 +7,5 @@
   "files.trimTrailingWhitespace": true,
   "editor.detectIndentation": false,
   "editor.wordWrap": "off",
+  "remote.containers.copyGitConfig": true
 }
