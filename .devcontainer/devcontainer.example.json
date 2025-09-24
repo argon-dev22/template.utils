@@ -6,11 +6,14 @@
   "features": {
     "ghcr.io/devcontainers/features/common-utils:2.5.3": {},
     "ghcr.io/devcontainers/features/docker-in-docker:2": {},
-    "ghcr.io/devcontainers/features/git:1": {}
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/sshd:1": {
+      "version": "latest"
+    }
   },
-  "settings": {
-      "remote.containers.copyGitConfig": true
-    },
+  "remoteEnv": {
+    "SSH_AUTH_SOCK": "${localEnv:SSH_AUTH_SOCK}"
+  },
   "customizations": {
     "vscode": {
       "extensions": [
