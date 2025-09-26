@@ -7,6 +7,12 @@ echo "=========================="
 echo "1. SSH Agent接続確認:"
 if [ -n "$SSH_AUTH_SOCK" ]; then
     echo "   ✅ SSH_AUTH_SOCK: $SSH_AUTH_SOCK"
+    if [ -S "$SSH_AUTH_SOCK" ]; then
+        echo "   ✅ SSH agentソケットが存在します"
+    else
+        echo "   ❌ SSH agentソケットが見つかりません"
+        exit 1
+    fi
 else
     echo "   ❌ SSH_AUTH_SOCKが設定されていません"
     exit 1
