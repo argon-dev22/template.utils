@@ -11,8 +11,11 @@
       "version": "latest"
     }
   },
+  "mounts": [
+    "source=${localEnv:HOME}/Library/Group Containers/2BUA8C4S2C.com.1password/t,target=/tmp/1password-ssh,type=bind,consistency=cached"
+  ],
   "remoteEnv": {
-    "SSH_AUTH_SOCK": "${localEnv:SSH_AUTH_SOCK}"
+    "SSH_AUTH_SOCK": "/tmp/1password-ssh/agent.sock"
   },
   "customizations": {
     "vscode": {
