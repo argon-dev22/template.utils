@@ -2,14 +2,17 @@
   "name": "template.utils",
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
   "features": {
-    "ghcr.io/devcontainers/features/common-utils:2.5.3": {},
+    "ghcr.io/devcontainers/features/common-utils:2": {},
     "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+    "ghcr.io/devcontainers/features/sshd:1": {},
     "ghcr.io/devcontainers/features/git:1": {}
   },
   "mounts": [
-    "source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind",
-    "source=${localEnv:HOME}/.gitconfig,target=/home/vscode/.gitconfig,type=bind"
+    "source=${localEnv:HOME}/Library/Group Containers/2BUA8C4S2C.com.1password/t,target=/tmp/1password-ssh,type=bind,consistency=cached"
   ],
+  "remoteEnv": {
+    "SSH_AUTH_SOCK": "/tmp/1password-ssh/agent.sock"
+  },
   "customizations": {
     "vscode": {
       "extensions": [

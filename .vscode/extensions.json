@@ -1,6 +1,7 @@
 {
   "recommendations": [
     "pkief.material-icon-theme",
-    "anysphere.remote-containers"
+    "anysphere.remote-containers",
+    "ms-azuretools.vscode-docker"
   ]
 }
