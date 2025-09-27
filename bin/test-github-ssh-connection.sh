@@ -1,51 +1,51 @@
 #!/bin/bash
 
-echo "🔑 1Password SSH設定テスト"
-echo "=========================="
+echo "🔑 1Password SSH Configuration Test"
+echo "===================================="
 
-# SSH_AUTH_SOCKの確認
-echo "1. SSH Agent接続確認:"
+# Check SSH_AUTH_SOCK
+echo "1. SSH Agent Connection Check:"
 if [ -n "$SSH_AUTH_SOCK" ]; then
     echo "   ✅ SSH_AUTH_SOCK: $SSH_AUTH_SOCK"
     if [ -S "$SSH_AUTH_SOCK" ]; then
-        echo "   ✅ SSH agentソケットが存在します"
+        echo "   ✅ SSH agent socket exists"
     else
-        echo "   ❌ SSH agentソケットが見つかりません"
+        echo "   ❌ SSH agent socket not found"
         exit 1
     fi
 else
-    echo "   ❌ SSH_AUTH_SOCKが設定されていません"
+    echo "   ❌ SSH_AUTH_SOCK is not set"
     exit 1
 fi
 
-# SSH鍵の一覧表示
+# List available SSH keys
 echo ""
-echo "2. 利用可能なSSH鍵:"
+echo "2. Available SSH Keys:"
 ssh-add -l
 if [ $? -eq 0 ]; then
-    echo "   ✅ SSH鍵が見つかりました"
+    echo "   ✅ SSH keys found"
 else
-    echo "   ❌ SSH鍵が見つかりません"
+    echo "   ❌ No SSH keys found"
     exit 1
 fi
 
-# Git設定確認
+# Check Git configuration
 echo ""
-echo "3. Git設定確認:"
-echo "   ユーザー名: $(git config user.name)"
-echo "   メールアドレス: $(git config user.email)"
-echo "   署名鍵: $(git config user.signingkey)"
-echo "   コミット署名: $(git config commit.gpgsign)"
+echo "3. Git Configuration Check:"
+echo "   Username: $(git config user.name)"
+echo "   Email: $(git config user.email)"
+echo "   Signing key: $(git config user.signingkey)"
+echo "   Commit signing: $(git config commit.gpgsign)"
 
-# GitHub接続テスト
+# GitHub connection test
 echo ""
-echo "4. GitHub接続テスト:"
+echo "4. GitHub Connection Test:"
 ssh -T git@github.com -o ConnectTimeout=10 2>&1 | head -1
 if [ ${PIPESTATUS[0]} -eq 1 ]; then
-    echo "   ✅ GitHub SSH接続成功"
+    echo "   ✅ GitHub SSH connection successful"
 else
-    echo "   ❌ GitHub SSH接続失敗"
+    echo "   ❌ GitHub SSH connection failed"
 fi
 
 echo ""
-echo "🎉 SSH設定テスト完了！"
+echo "🎉 SSH configuration test completed!"
